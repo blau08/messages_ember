@@ -1,0 +1,14 @@
+<div>
+{{outlet}}
+</div>
+
+<div class="body">
+  <ul>
+    {{#each model.questions as |question|}}
+      {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
+    {{/each}}
+  </ul>
+
+  {{new-question saveQuestion="saveQuestion"}}
+
+</div>
