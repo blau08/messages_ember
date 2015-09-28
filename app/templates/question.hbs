@@ -6,8 +6,18 @@
 
   {{question-detail question=model}}
   {{update-question model=model update='update' delete='delete'}}
-  {{answer-tile model=model.answers updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}}
+  {{answer-tile answer=answer updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}}
   {{new-answer model=model saveAnswer='saveAnswer'}}
+
+  <div class="body">
+    <ul>
+      {{#each model.answers as |answer|}}
+        {{answer-tile answer=answer}}
+      {{/each}}
+    </ul>
+
+    {{new-answer saveAnswer="saveAnswer"}}
+  </div>
 
 </div>
 

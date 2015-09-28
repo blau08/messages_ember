@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('question', params.question_id);
-    return this.store.findRecord('answer', params.answer_id);
   },
   actions: {
     update(question, params) {
@@ -24,9 +23,9 @@ export default Ember.Route.extend({
       //   return question.save();
       // });
       newAnswer.save();
-      params.question.save().then(function(question) {
-        question.reload();
-      });
+      // params.question.save().then(function(question) {
+      //   question.reload();
+      // });
       this.transitionTo('question', params.question);
     },
   }
