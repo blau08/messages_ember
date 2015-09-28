@@ -1,11 +1,14 @@
 {{outlet}}
 
 <div class="container">
-  
-<h2>More information about {{model.name}}'s {{model.question}}</h2>
 
-{{question-detail question=model}}
+  <h2>More information about {{model.name}}'s {{model.question}}</h2>
 
-{{update-question question=question update="update"}}
-<button {{action 'delete' question}}>Delete</button>
+  {{question-detail question=model}}
+  {{update-question model=model update='update' delete='delete'}}
+  {{answer-tile model=model.answers updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}}
+  {{new-answer model=model saveAnswer='saveAnswer'}}
+
 </div>
+
+{{#link-to 'index'}}<button class="btn btn-default">Back</button>{{/link-to}}

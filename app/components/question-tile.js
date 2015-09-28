@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  updateRental: false,
+  updateQuestionForm: false,
     actions: {
     update(question, params) {
       this.sendAction('update', question, params);

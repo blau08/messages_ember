@@ -4,22 +4,22 @@
     <form>
       <div class="form-control">
         <label for="name">Name</label>
-        {{input value=name id="name" placeholder=question.name}}
+        {{input value=name id="name" placeholder=model.name}}
       </div>
 
       <div class="form-control">
         <label for="question">Question</label>
-        {{input value=question id="question" placeholder=question.question}}
+        {{input value=question id="question" placeholder=model.question}}
       </div>
 
       <div class="form-control">
         <label for="notes">Notes</label>
-        {{input value=notes id="notes" placeholder=question.notes}}
+        {{input value=notes id="notes" placeholder=model.notes}}
       </div>
 
-      <button {{action 'update' question}}>Save</button>
+      <button {{action 'update' model}}>Save</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'updateQuestionForm'}}>Update</button>
+  <button {{action 'updateQuestionForm' model}}>Update</button>
 {{/if}}
