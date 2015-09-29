@@ -17,12 +17,12 @@ export default Ember.Route.extend({
     saveAnswer(params) {
       console.log('got to question route handler');
       var newAnswer = this.store.createRecord('answer', params);
-      // var question = params.question;
-      // question.get('answers').addObject(newAnswer);
-      // newAnswer.save().then(function() {
-      //   return question.save();
-      // });
-      newAnswer.save();
+      var question = params.question;
+      question.get('answers').addObject(newAnswer);
+      newAnswer.save().then(function() {
+        return question.save();
+      });
+      // newAnswer.save();
       // params.question.save().then(function(question) {
       //   question.reload();
       // });

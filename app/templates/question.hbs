@@ -2,12 +2,13 @@
 
 <div class="container">
 
-  <h2>More information about {{model.name}}'s {{model.question}}</h2>
+  <h2>{{model.question}}</h2>
 
   {{question-detail question=model}}
   {{update-question model=model update='update' delete='delete'}}
-  {{answer-tile answer=answer updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}}
-  {{new-answer model=model saveAnswer='saveAnswer'}}
+  <!-- {{answer-tile answer=answer updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}} -->
+  <!-- {{new-answer model=model saveAnswer='saveAnswer'}} -->
+  {{new-answer saveAnswer="saveAnswer" question=model}}
 
   <div class="body">
     <ul>
@@ -16,7 +17,6 @@
       {{/each}}
     </ul>
 
-    {{new-answer saveAnswer="saveAnswer"}}
   </div>
 
 </div>

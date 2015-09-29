@@ -1,25 +1,20 @@
 {{#if updateQuestionForm}}
-  <h4>Update {{model.name}}'s {{model.question}}</h4>
+
   <div>
     <form>
-      <div class="form-control">
-        <label for="name">Name</label>
-        {{input value=name id="name" placeholder=model.name}}
-      </div>
+        {{input class="form-control" value=name id="name" placeholder=model.name}}
+        <br>
+        {{input class="form-control" value=question id="question" placeholder=model.question}}
 
-      <div class="form-control">
-        <label for="question">Question</label>
-        {{input value=question id="question" placeholder=model.question}}
-      </div>
-
-      <div class="form-control">
-        <label for="notes">Notes</label>
+      <!-- <div class="form-control">
         {{input value=notes id="notes" placeholder=model.notes}}
-      </div>
-
-      <button {{action 'update' model}}>Save</button>
+      </div> -->
     </form>
+    <br>
+    <button class="btn btn-success" {{action 'update' model}}>Save</button>
+    <br>
   </div>
 {{else}}
-  <button {{action 'updateQuestionForm' model}}>Update</button>
+  <br>
+  <button class="btn btn-danger" {{action 'updateQuestionForm' model}}>Update</button>
 {{/if}}
