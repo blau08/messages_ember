@@ -1,6 +1,18 @@
 html {
   /*margin-bottom: 50px;*/
 }
+#indexUL {
+  padding: 10px;
+}
+#questionTileLI {
+  padding: 2px;
+}
+#newQuestion {
+  text-align: center;
+}
+#newQuestionHeader {
+  text-align: center;
+}
 /*html
 
 body {

@@ -11,10 +11,14 @@ export default Ember.Component.extend({
       var params = {
         name: this.get('name'),
         question: this.get('question'),
-        notes: this.get('notes'),
+        // notes: this.get('notes'),
+        time: Date.now()
       };
       this.set('addNewQuestion', false),
       this.sendAction('saveQuestion', params);
+      this.set('name', "");
+      this.set('question', "");
+      this.set('notes', "");
     }
   }
 });

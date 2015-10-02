@@ -1,8 +1,5 @@
-<li>
-  <p>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}}</p>
-  <p>
-    Asked by {{question.name}}
-  </p>
+<li id="questionTileLI">
+  <p>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}} - Asked by {{question.name}} on {{format-Date question.time}}</p>
   <!-- {{update-question question=question update="update"}} -->
-  <button {{action 'delete' question}}>Delete</button>
+  <button class="btn btn-danger" {{action 'delete' question}}>Delete</button>
 </li>

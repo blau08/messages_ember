@@ -1,23 +1,38 @@
 {{outlet}}
 
 <div class="container">
+  <div class="row">
+    <div class="col-md-4">
 
-  <h2>{{model.question}}</h2>
+    </div>
 
-  {{question-detail question=model}}
-  {{update-question model=model update='update' delete='delete'}}
-  <!-- {{answer-tile answer=answer updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}} -->
-  <!-- {{new-answer model=model saveAnswer='saveAnswer'}} -->
-  {{new-answer saveAnswer="saveAnswer" question=model}}
+    <div class="col-md-4">
+      <h2>{{model.question}}</h2>
 
-  <div class="body">
-    <ul>
-      {{#each model.answers as |answer|}}
-        {{answer-tile answer=answer}}
-      {{/each}}
-    </ul>
+      {{question-detail question=model}}
+      {{update-question model=model update='update' delete='delete'}}
+      <!-- {{answer-tile answer=answer updateAnswer='updateAnswer' deleteAnswer='deleteAnswer'}} -->
+      <!-- {{new-answer model=model saveAnswer='saveAnswer'}} -->
+      {{new-answer saveAnswer="saveAnswer" question=model}}
+
+      <div class="body">
+        <ul>
+          {{#each model.answers as |answer|}}
+            {{answer-tile answer=answer}}
+          {{/each}}
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="col-md4">
+
+    </div>
 
   </div>
+
+
+
 
 </div>
 

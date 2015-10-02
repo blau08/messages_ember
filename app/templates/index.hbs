@@ -2,13 +2,23 @@
 {{outlet}}
 </div>
 
-<div class="body">
-  <ul>
-    {{#each model.questions as |question|}}
-      {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
-    {{/each}}
-  </ul>
+<div class="row">
+  <div class="col-md-2">
+  </div>
 
-  {{new-question saveQuestion="saveQuestion"}}
+  <div class="col-md-8">
+    <div class="body">
+      {{new-question saveQuestion="saveQuestion"}}
+      <ul id=indexUL>
+        {{#each model.questions as |question|}}
+          <div class="well">
+            {{question-tile question=question destroyQuestion="destroyQuestion"}}
+          </div>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
+  <div class="col-md-2">
+  </div>
 </div>
